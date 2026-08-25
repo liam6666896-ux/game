@@ -1,5 +1,5 @@
 {
-  "name": "Sky Runner",
+  "name": "SkyRunner",
   "short_name": "SkyRunner",
   "start_url": "./index.html",
   "display": "standalone",
@@ -7,9 +7,10 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://via.placeholder.com/512.png",
+      "src": "https://raw.githubusercontent.com/liam6666896-ux/game/main/icon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
