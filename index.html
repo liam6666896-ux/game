@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sky Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Menu Music Toggle Button -->
+    <button id="menuMusicBtn" type="button">🔊 ON</button>
+
+    <!-- ================================
+         START PAGE
+    ================================= -->
+    <section id="startPage" class="page">
+        <div class="startContent">
+            <h1>SKY RUNNER</h1>
+            <p class="subtitle">RUN • JUMP • SURVIVE</p>
+            <button id="startButton" class="mainButton">PLAY</button>
+        </div>
+    </section>
+
+    <!-- ================================
+         LEVEL PAGE
+    ================================= -->
+    <section id="levelPage" class="page hidden">
+        <div class="levelContent">
+            <h1>SELECT LEVEL</h1>
+            <div id="levelList">
+    <button class="levelButton" data-level="1">LEVEL 1</button>
+    <button class="levelButton" data-level="2">LEVEL 2</button>
+    <button class="levelButton" data-level="3">LEVEL 3</button>
+    <button class="levelButton" data-level="4">LEVEL 4</button>
+    <button class="levelButton" data-level="5">LEVEL 5</button>
+    <button class="levelButton" data-level="6">LEVEL 6</button>
+    <button class="levelButton" data-level="7">LEVEL 7</button>
+    <button class="levelButton" data-level="8">LEVEL 8</button>
+    <button class="levelButton" data-level="9">LEVEL 9</button>
+    <button class="levelButton" data-level="10">LEVEL 10</button>
+    <button class="levelButton" data-level="11">LEVEL 11</button>
+    <button class="levelButton" data-level="12">LEVEL 12</button>
+    <button class="levelButton" data-level="13">LEVEL 13</button>
+    <button class="levelButton" data-level="14">LEVEL 14</button>
+    <button class="levelButton" data-level="15">LEVEL 15</button>
+</div>
+        </div>
+    </section>
+
+    <!-- ================================
+         GAME PAGE
+    ================================= -->
+    <section id="gamePage" class="page hidden">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="hud">
+            <div id="currentLevel">LEVEL 1</div>
+            <div id="musicControl">
+                <button id="musicBtn" type="button">🔊 ON</button>
+            </div>
+            <div id="miniMap">
+                <canvas id="miniMapCanvas"></canvas>
+            </div> 
+        </div>
+
+        <div id="controls">
+            <button id="backButton" class="controlButton">←</button>
+            <button id="jumpButton" class="controlButton jump">↑</button>
+            <button id="forwardButton" class="controlButton">→</button>
+        </div>
+
+        <audio id="bgMusic" loop preload="auto">
+            <source src="music/song.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <!-- ================================
+         RESTART PAGE
+    ================================= -->
+    <section id="restartPage" class="page hidden">
+        <div class="resultContent">
+            <h1>YOU DIED</h1>
+            <p>LEVEL <span id="deadLevel">1</span></p>
+            <button id="restartButton" class="resultButton">RESTART</button>
+            <button id="deathLevelsButton" class="secondaryButton">LEVELS</button>
+        </div>
+    </section>
+
+    <!-- ================================
+         WIN PAGE
+    ================================= -->
+    <section id="winPage" class="page hidden">
+        <div class="resultContent">
+            <h1>LEVEL COMPLETE</h1>
+            <p>LEVEL <span id="completedLevel">1</span></p>
+            <button id="nextLevelButton" class="resultButton">NEXT LEVEL</button>
+            <button id="winLevelsButton" class="secondaryButton">LEVELS</button>
+        </div>
+    </section>
+
+    <audio id="menuMusic" loop preload="auto">
+        <source src="music/song2.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
