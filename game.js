@@ -6364,137 +6364,177 @@ document.addEventListener(
     }
 );
 
-
 /* =====================================================
-   JUMP BUTTON
+   SCREEN TOUCH BUTTON CONTROLS
+   HOLD = MOVE
+   RELEASE = STOP
 ===================================================== */
 
 const jumpButton =
-    document.getElementById(
-        "jumpButton"
-    );
+    document.getElementById("jumpButton");
 
+const forwardButton =
+    document.getElementById("forwardButton");
+
+const backButton =
+    document.getElementById("backButton");
+
+
+/* =====================================================
+   FORWARD BUTTON →
+===================================================== */
+
+forwardButton.addEventListener(
+    "pointerdown",
+    function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!playing) {
+            return;
+        }
+
+        try {
+            forwardButton.setPointerCapture(
+                event.pointerId
+            );
+        } catch (error) {}
+
+        moveDirection = 1;
+    }
+);
+
+
+forwardButton.addEventListener(
+    "pointerup",
+    function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        moveDirection = 0;
+
+        try {
+            forwardButton.releasePointerCapture(
+                event.pointerId
+            );
+        } catch (error) {}
+    }
+);
+
+
+forwardButton.addEventListener(
+    "pointercancel",
+    function () {
+
+        moveDirection = 0;
+    }
+);
+
+
+/* =====================================================
+   BACK BUTTON ←
+===================================================== */
+
+backButton.addEventListener(
+    "pointerdown",
+    function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!playing) {
+            return;
+        }
+
+        try {
+            backButton.setPointerCapture(
+                event.pointerId
+            );
+        } catch (error) {}
+
+        moveDirection = -1;
+    }
+);
+
+
+backButton.addEventListener(
+    "pointerup",
+    function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        moveDirection = 0;
+
+        try {
+            backButton.releasePointerCapture(
+                event.pointerId
+            );
+        } catch (error) {}
+    }
+);
+
+
+backButton.addEventListener(
+    "pointercancel",
+    function () {
+
+        moveDirection = 0;
+    }
+);
+
+
+/* =====================================================
+   JUMP BUTTON ↑
+   ONE PRESS = ONE JUMP
+===================================================== */
 
 jumpButton.addEventListener(
     "pointerdown",
     function (event) {
 
         event.preventDefault();
+        event.stopPropagation();
+
+        if (!playing) {
+            return;
+        }
+
+        try {
+            jumpButton.setPointerCapture(
+                event.pointerId
+            );
+        } catch (error) {}
 
         jump();
-
     }
 );
-
 
 /* =====================================================
-   FORWARD BUTTON
+   SAFETY
 ===================================================== */
 
-const forwardButton =
-    document.getElementById(
-        "forwardButton"
-    );
-
-
-forwardButton.addEventListener(
-    "pointerdown",
-    function (event) {
-
-        event.preventDefault();
-
-        if (playing) {
-            moveDirection = 1;
-        }
-
-    }
-);
-
-
-forwardButton.addEventListener(
-    "pointerup",
-    function (event) {
-
-        event.preventDefault();
-
-        moveDirection = 0;
-
-    }
-);
-
-
-forwardButton.addEventListener(
-    "pointercancel",
+window.addEventListener(
+    "blur",
     function () {
 
         moveDirection = 0;
-
     }
 );
-
-
-forwardButton.addEventListener(
-    "pointerleave",
-    function () {
-
-        moveDirection = 0;
-
-    }
-);
-
 
 /* =====================================================
-   BACK BUTTON
+   EXTRA SAFETY
+   If the browser loses the pointer,
+   stop movement.
 ===================================================== */
 
-const backButton =
-    document.getElementById(
-        "backButton"
-    );
-
-
-backButton.addEventListener(
-    "pointerdown",
-    function (event) {
-
-        event.preventDefault();
-
-        if (playing) {
-            moveDirection = -1;
-        }
-
-    }
-);
-
-
-backButton.addEventListener(
-    "pointerup",
-    function (event) {
-
-        event.preventDefault();
-
-        moveDirection = 0;
-
-    }
-);
-
-
-backButton.addEventListener(
-    "pointercancel",
+window.addEventListener(
+    "blur",
     function () {
 
         moveDirection = 0;
-
-    }
-);
-
-
-backButton.addEventListener(
-    "pointerleave",
-    function () {
-
-        moveDirection = 0;
-
     }
 );
 
