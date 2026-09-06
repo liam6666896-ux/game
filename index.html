@@ -4,22 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sky Runner</title>
+    <title>Beyond the Edge</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-
-    <!-- Menu Music Toggle Button -->
-    <button id="menuMusicBtn" type="button">🔊 ON</button>
-
     <!-- ================================
          START PAGE
     ================================= -->
     <section id="startPage" class="page">
         <div class="startContent">
-            <h1>SKY RUNNER</h1>
+            <button id="themeBtn" type="button">🌙 DARK</button>
+            <h1>Beyond the Edge</h1>
             <p class="subtitle">RUN • JUMP • SURVIVE</p>
             <button id="startButton" class="mainButton">PLAY</button>
         </div>
@@ -32,22 +28,22 @@
         <div class="levelContent">
             <h1>SELECT LEVEL</h1>
             <div id="levelList">
-    <button class="levelButton" data-level="1">LEVEL 1</button>
-    <button class="levelButton" data-level="2">LEVEL 2</button>
-    <button class="levelButton" data-level="3">LEVEL 3</button>
-    <button class="levelButton" data-level="4">LEVEL 4</button>
-    <button class="levelButton" data-level="5">LEVEL 5</button>
-    <button class="levelButton" data-level="6">LEVEL 6</button>
-    <button class="levelButton" data-level="7">LEVEL 7</button>
-    <button class="levelButton" data-level="8">LEVEL 8</button>
-    <button class="levelButton" data-level="9">LEVEL 9</button>
-    <button class="levelButton" data-level="10">LEVEL 10</button>
-    <button class="levelButton" data-level="11">LEVEL 11</button>
-    <button class="levelButton" data-level="12">LEVEL 12</button>
-    <button class="levelButton" data-level="13">LEVEL 13</button>
-    <button class="levelButton" data-level="14">LEVEL 14</button>
-    <button class="levelButton" data-level="15">LEVEL 15</button>
-</div>
+                <button class="levelButton" data-level="1">LEVEL 1</button>
+                <button class="levelButton" data-level="2">LEVEL 2</button>
+                <button class="levelButton" data-level="3">LEVEL 3</button>
+                <button class="levelButton" data-level="4">LEVEL 4</button>
+                <button class="levelButton" data-level="5">LEVEL 5</button>
+                <button class="levelButton" data-level="6">LEVEL 6</button>
+                <button class="levelButton" data-level="7">LEVEL 7</button>
+                <button class="levelButton" data-level="8">LEVEL 8</button>
+                <button class="levelButton" data-level="9">LEVEL 9</button>
+                <button class="levelButton" data-level="10">LEVEL 10</button>
+                <button class="levelButton" data-level="11">LEVEL 11</button>
+                <button class="levelButton" data-level="12">LEVEL 12</button>
+                <button class="levelButton" data-level="13">LEVEL 13</button>
+                <button class="levelButton" data-level="14">LEVEL 14</button>
+                <button class="levelButton" data-level="15">LEVEL 15</button>
+            </div>
         </div>
     </section>
 
@@ -64,7 +60,7 @@
             </div>
             <div id="miniMap">
                 <canvas id="miniMapCanvas"></canvas>
-            </div> 
+            </div>
         </div>
 
         <div id="controls">
@@ -74,7 +70,7 @@
         </div>
 
         <audio id="bgMusic" loop preload="auto">
-            <source src="song.mp3" type="audio/mpeg">
+            <source src="music/song.mp3" type="audio/mpeg">
         </audio>
     </section>
 
@@ -103,9 +99,10 @@
     </section>
 
     <audio id="menuMusic" loop preload="auto">
-        <source src="song2.mp3" type="audio/mpeg">
+        <source src="music/song2.mp3" type="audio/mpeg">
     </audio>
 
     <script src="game.js"></script>
 </body>
+
 </html>
