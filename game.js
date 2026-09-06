@@ -16,7 +16,7 @@ const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 let musicEnabled = true;
 
-if (bgMusic) bgMusic.volume = 0.15;
+if (bgMusic) bgMusic.volume = 0.35;
 
 function startMusic() {
     if (!musicEnabled || !bgMusic) return;
@@ -64,7 +64,7 @@ resizeCanvas();
    MENU MUSIC
 ===================================================== */
 const menuMusic = document.getElementById("menuMusic");
-if (menuMusic) menuMusic.volume = 0.15;
+if (menuMusic) menuMusic.volume = 0.35;
 let menuMusicEnabled = true;
 
 function playMenuMusic() {
